@@ -13,51 +13,54 @@ const About = (props) => {
 
     const Icons = {
         figmaIcon: <FaFigma />,
-        JSIcon: <TbBrandJavascript/>,
-        ReactIcon: <FaReact/>,
-        QGisIcon: <SiQgis/>
+        JSIcon: <TbBrandJavascript />,
+        ReactIcon: <FaReact />,
+        QGisIcon: <SiQgis />
     }
 
     return (
-        <div>
-            <h1>My Developer Skills</h1>
-            <div className="MySkillsCardContainer">
-                <MySkillsCard
-                    FrontSide='FrontSide'
-                    icon={Icons.figmaIcon}
+        <div className="About">
+            <div className={`About--Container ${props.DarkMode && 'About--Container--Dark'}`}>
+                <h1>My Developer Skills</h1>
+                <div className="MySkillsCardContainer">
+                    <MySkillsCard
+                        FrontSide='FrontSide'
+                        icon={Icons.figmaIcon}
 
-                    BackSide='BackSide'
-                    title="Designer"
-                    details="Figma"
-                    DarkMode={props.DarkMode}
-                />
-                <MySkillsCard
-                    FrontSide='FrontSide'
-                    icon={Icons.JSIcon}
+                        BackSide='BackSide'
+                        title="Designer"
+                        details="Figma"
+                        DarkMode={props.DarkMode}
+                    />
+                    <MySkillsCard
+                        FrontSide='FrontSide'
+                        icon={Icons.JSIcon}
 
-                    BackSide='BackSide'
-                    title="Frontend Developer"
-                    details="HTML, CSS, JS"
-                    DarkMode={props.DarkMode}
-                />
-                <MySkillsCard
-                    FrontSide='FrontSide'
-                    icon={Icons.ReactIcon}
+                        BackSide='BackSide'
+                        title="Frontend Developer"
+                        details="HTML, CSS, JS"
+                        DarkMode={props.DarkMode}
+                    />
+                    <MySkillsCard
+                        FrontSide='FrontSide'
+                        icon={Icons.ReactIcon}
 
-                    BackSide='BackSide'
-                    title="Frontend Developer"
-                    details="React"
-                    DarkMode={props.DarkMode}
-                />
-                <MySkillsCard
-                    FrontSide='FrontSide'
-                    icon={Icons.QGisIcon}
+                        BackSide='BackSide'
+                        title="Frontend Developer"
+                        details="React"
+                        DarkMode={props.DarkMode}
+                    />
+                    <MySkillsCard
+                        FrontSide='FrontSide'
+                        icon={Icons.QGisIcon}
 
-                    BackSide='BackSide'
-                    title="GIS"
-                    details="QGis, ArcGis"
-                    DarkMode={props.DarkMode}
-                />
+                        BackSide='BackSide'
+                        title="GIS"
+                        details="QGis, ArcGis"
+                        DarkMode={props.DarkMode}
+                    />
+                </div>
+                ide még jöhetnek dolgok
             </div>
         </div>
     )
