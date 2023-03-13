@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 
-const Navbar = (props) => {
+const Header = (props) => {
     return (
         <nav className={`${props.DarkMode && "Navbar--Dark"}`}>
-            <div>
-                Dave's Protfolio
+            <div className="Navbar--LogoDiv">
+                <img src="../src/assets/images/Logo.png" className="Logo"/>
             </div>
             <div className="Navbar--LinkCointainer">
                 <div className="Navbar--Links">
@@ -32,4 +32,4 @@ const Navbar = (props) => {
     )
 }
 
-export default Navbar;
+export default Header;

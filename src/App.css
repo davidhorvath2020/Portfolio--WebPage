@@ -38,11 +38,12 @@ main {
   width: 100%;
 }
 
-.FirstLine, h1{
+.FirstLine,
+h1 {
   margin: 0;
 }
 
-/************************NAVBAR*************************/
+/************************HEADER*************************/
 
 nav {
   display: flex;
@@ -51,33 +52,76 @@ nav {
   align-items: center;
   height: 50px;
   /* background-color:#358d8b; */
-  background-color: rgba(53,141,139,1);
+  background-color: rgba(53, 141, 139, 1);
   /* transition: background-color 1s  ease-in-out, filter 1s ease-in-out; */
+}
+
+.Navbar--LogoDiv {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+.Navbar--LogoDiv:hover {
+  cursor: pointer;
+}
+
+.Logo {
+  width: 20px;
 }
 
 .Navbar--Dark {
   background-color: #020c1b;
 }
 
-.Navbar--Element, .Navbar--Element--Dark {
+.Navbar--Element,
+.Navbar--Element--Dark {
   text-decoration: none;
-  color: black;
-  font-weight: bold;
+  color: rgb(2, 12, 27);
+  font-weight: 500;
   margin: auto 20px auto 20px;
+  display: inline-block;
+  position: relative;
 }
 
-.Navbar--Element--Dark{
+.Navbar--Element--Dark {
   color: #64ffda;
 }
 
-.Navbar--LinkCointainer{
+.Navbar--Element::after,
+.Navbar--Element--Dark::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(2, 12, 27);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.Navbar--Element--Dark::after {
+  background-color: #64ffda;
+  height: 1px;
+}
+
+.Navbar--Element:hover::after,
+.Navbar--Element--Dark:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.Navbar--LinkCointainer {
   display: flex;
   flex-direction: row;
   width: 50%;
   justify-content: flex-end;
 }
 
-.Navbar--Links{
+.Navbar--Links {
   display: flex;
   flex-direction: row;
 }
@@ -102,93 +146,132 @@ nav {
 
 /************************HOME*************************/
 
-.Home{
+.Home {
   margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.Home--Container{
+.Home--Container {
   width: 85%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   border: 3px solid #051b3b;
   border-radius: 10px;
   margin: 50px 70px 50px 70px;
   background-color: rgb(100, 255, 218);
 }
 
-.Home--Container--Dark{
+.Home--Container--Dark {
   border: 3px solid #64ffda;
   border-radius: 10px;
-  background-color:#051b3b;
+  background-color: #051b3b;
 }
 
 
-.Home--Greetings{
+.Home--Section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Home--Greetings {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  margin: 20px 100px 20px 100px;
+  margin: 20px 50px 20px 50px;
   font-size: 1.2rem;
-  width:40%
+  width: 50%;
+  text-align: left;
 }
 
-.GreetingsElement{
+.GreetingsElement {
   margin: 5px;
 }
 
-.Spoiler{
+.Spoiler {
   font-style: italic;
 }
 
-.GreetingsIntroduction{
+.GreetingsIntroduction {
   text-align: left;
 }
+
+.Home--Image{
+  border-radius: 5px;
+}
+
 
 .Image--Container {
   display: flex;
   flex-direction: column;
-  border: 5px solid #33806e;
+  width: 25%;
+  border: 2px solid #64ffda;
   border-radius: 5px;
-  width: 20%;
-  padding: 5px 20px 20px 5px;
-  margin: 20px 100px 20px 100px;
+  transition: 0.5s;
+  height: fit-content;
+  margin: 25px 50px 20px 50px;
+  padding: 5px 5px 10px 10px;
 }
 
-.Home--Image {
-  width: 100%;
+.Image--Container:hover {
+  padding: 10px 10px 30px 30px;
 }
 
-/************************ABOUT*************************/
+.Home--LinkToAbout {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  margin: auto 20px auto 20px;
+  display: inline-block;
+  transition: 0.5s;
+}
 
-.About{
-  margin: 0;
+.Home--LinkToAbout:hover {
+  letter-spacing: 2px;
+}
+
+.GetInTouch {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
+  transition: 0.5s;
 }
 
-.About--Container{
+.GetInTouch:hover {
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/************************ABOUT*************************/
+.About {
+  margin: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.About--Container {
+  display: flex;
   width: 85%;
+  flex-direction: column;
   border: 3px solid #051b3b;
   border-radius: 10px;
   margin: 50px 70px 50px 70px;
   background-color: rgb(100, 255, 218);
 }
 
-.About--Container--Dark{
+.About--Container--Dark {
   border: 3px solid #64ffda;
   border-radius: 10px;
-  background-color:#051b3b;
+  background-color: #051b3b;
 }
 
 
-.MySkillsCardContainer{
+.MySkillsCardContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -196,59 +279,59 @@ nav {
   flex-wrap: wrap;
 }
 
-.MySkillsCard{
+.MySkillsCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 3px solid rgba(53,141,139,1);
+  border: 3px solid rgba(53, 141, 139, 1);
   border-radius: 10px;
   width: 200px;
   height: 300px;
   transform: rotateY(0deg);
-  font-weight:bold;
+  font-weight: bold;
   font-size: 1.2rem;
 }
 
-.MySkillsCard--Dark{
+.MySkillsCard--Dark {
   border: 3px solid #020c1b;
   border-radius: 10px;
 
 }
 
-.MySkillsCard:hover{
+.MySkillsCard:hover {
   cursor: pointer;
-  background-color: rgba(53,141,139,1);
+  background-color: rgba(53, 141, 139, 1);
   border: 3px solid white;
   border-radius: 10px;
 }
 
-.MySkillsCard--Dark:hover{
+.MySkillsCard--Dark:hover {
   background-color: #11384f;
 }
 
 
-.MySkillsCard--Front{
+.MySkillsCard--Front {
   transition: transform 0.6s;
   transform: rotateY(0deg);
 }
 
-.MySkillsCard--Back{
+.MySkillsCard--Back {
   transition: transform 0.6s;
   transform: rotateY(360deg);
 }
 
 
 /************************MYPORTFOLIO*************************/
-.MyPortfolio{
+.MyPortfolio {
   margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.MyPortfolio--Container{
+.MyPortfolio--Container {
   display: flex;
-  flex-direction: column;
   width: 85%;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -258,10 +341,75 @@ nav {
   background-color: rgb(100, 255, 218);
 }
 
-.MyPortfolio--Container--Dark{
+.MyPortfolio--Container--Dark {
   border: 3px solid #64ffda;
   border-radius: 10px;
-  background-color:#051b3b;
+  background-color: #051b3b;
+}
+
+/************************MYPORTFOLIO--MyPortfolioJobs*************************/
+
+.ProjectsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Project--title {
+  background-color: rgb(11, 255, 197);
+  margin: 20px;
+  transition: 0.2s;
+  padding: 25px;
+}
+
+.Project--title--Dark {
+  background-color: #04142c;
+}
+
+.Project--title:hover {
+  height: 110%;
+  transform: scale(1.05);
+}
+
+
+/************************MYPORTFOLIO--MyPortfolioJobs--MyPortfolioJobsDetails*************************/
+
+
+.Project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Project--Detail--Container {
+  display: flex;
+  width: 85%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 3px solid #051b3b;
+  border-radius: 10px;
+  margin: 50px 70px 50px 70px;
+  background-color: rgb(100, 255, 218);
+}
+
+.Project--Detail--Container--Dark {
+  border: 3px solid #64ffda;
+  border-radius: 10px;
+  background-color: #051b3b;
+}
+
+.StepBack {
+  margin: 5px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+}
+
+.StepBack:hover {
+  border: 2px solid #64ffda;
+  border-radius: 50px;
 }
 
 
@@ -288,7 +436,7 @@ nav {
   padding: 50px;
 }
 
-.Tenzi--DiceCardContainer{
+.Tenzi--DiceCardContainer {
   /* display: grid;
   grid-template: auto auto / repeat(5, 1fr); */
   display: flex;
@@ -303,7 +451,7 @@ nav {
   min-height: fit-content;
 }
 
-.DiceFace{
+.DiceFace {
   background-color: #020c1b;
   height: 50px;
   width: 50px;
@@ -317,15 +465,15 @@ nav {
   border: 3px solid transparent;
 }
 
-.DiceFace:hover{
+.DiceFace:hover {
   border: 3px solid #64ffda;
 }
 
-.DiceNumber{
+.DiceNumber {
   font-size: 2rem;
 }
 
-.RollDice-Button{
+.RollDice-Button {
   height: 50px;
   width: 100px;
   border: none;
@@ -345,4 +493,17 @@ nav {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
-/************************ÉSATÖBBI*************************/
+/************************Footer*************************/
+
+.Footer,
+.Footer--Dark {
+  font-weight: 500;
+}
+
+.Footer {
+  color: rgb(2, 12, 27);
+}
+
+.Footer--Dark {
+  color: #020c1b;
+}

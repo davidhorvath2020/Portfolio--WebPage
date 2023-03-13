@@ -1,11 +1,13 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Navbar from './Navbar';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import MyPortfolio from './pages/MyPortfolio';
+import MyPortfolioJobsDetails from './components/MyPortfolio/MyPortfolioJobsDetails';
 
 import { useState, useEffect } from 'react';
+import '../server';
 
 function App() {
 
@@ -15,7 +17,6 @@ function App() {
   function toggleDarkMode() {
     setDarkMode(prevDarkMode => !prevDarkMode)
   }
-
 
   useEffect(() => {
     localStorage.setItem("DarkMode", JSON.stringify(DarkMode))
@@ -33,38 +34,16 @@ function App() {
 
   return (
     <BrowserRouter >
-      <header style={DarkStyle} >
-        <Navbar
-          toggleDarkMode={toggleDarkMode}
-          DarkMode={DarkMode}
-        />
-      </header>
-      <main style={DarkStyle}>
-        <Routes>
-          <Route
-            path='/'
-            element={<Home
-              DarkMode={DarkMode}
-            />}
+      <Routes>
+        <Route path='/' element={<Layout style={DarkStyle} toggleDarkMode={toggleDarkMode} DarkMode={DarkMode} />} >
+          <Route path='/' element={<Home DarkMode={DarkMode} />} />
+          <Route path='/About' element={<About DarkMode={DarkMode} />} />
 
-          />
-          <Route
-            path='/About'
-            element={<About
-              DarkMode={DarkMode}
-            />}
-
-          />
-          <Route
-            path='/MyPortfolio'
-            element={<MyPortfolio
-              DarkMode={DarkMode}
-            />}
-
-          />
-        </Routes>
-      </main>
-    </BrowserRouter>
+          <Route path='/MyPortfolio' element={<MyPortfolio DarkMode={DarkMode} />} />
+          <Route path="MyPortfolio/:id" element={<MyPortfolioJobsDetails DarkMode={DarkMode} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter >
   )
 }
 

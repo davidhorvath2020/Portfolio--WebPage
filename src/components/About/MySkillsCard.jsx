@@ -44,7 +44,6 @@ const MySkillsCard = (props) => {
         } else {
             setOutside(FrontValue)
         }
-        console.log(styleObjectClassName)
     }
     const styleObject = { sideClassName: sideClassName, Dark: props.DarkMode && "MySkillsCard--Dark" }
     const styleObjectClassName = styleObject.sideClassName + ' ' + styleObject.Dark

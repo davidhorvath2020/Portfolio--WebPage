@@ -1,13 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import MySkillsCard from '../components/MySkillsCard';
+import MySkillsCard from '../components/About/MySkillsCard';
 
 import { FaFigma, FaReact } from "react-icons/fa";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiQgis } from "react-icons/si";
-
-
-
 
 const About = (props) => {
 
@@ -18,10 +14,21 @@ const About = (props) => {
         QGisIcon: <SiQgis />
     }
 
+
     return (
         <div className="About">
             <div className={`About--Container ${props.DarkMode && 'About--Container--Dark'}`}>
-                <h1>My Developer Skills</h1>
+                <div>
+                    I started to learn programming in high school in Pascal in 2018. 
+                    However, I went to study Agricultural Engineering
+                    and Agricultural Economics.
+                    I started to practice coding in 2022, but this time I could choose.
+                    I really liked the frontend development so I began to learn HTML, CSS, JavaScript. 
+                    So the bascics. But then the flow caught me. 
+                    I continued to learn ReactJS, Git, GitHub, Figma and so on...
+                    Here you can check
+                </div>
+                <h2>My Developer Skills</h2>
                 <div className="MySkillsCardContainer">
                     <MySkillsCard
                         FrontSide='FrontSide'

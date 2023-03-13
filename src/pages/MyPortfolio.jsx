@@ -1,6 +1,7 @@
 import React from "react";
-import Tenzi from "../components/Tenzi";
-import ProjectsCard from "../components/ProjectsCard";
+import Tenzi from "../components/MyPortfolio/Tenzi";
+
+import MyPortfolioJobs from "../components/MyPortfolio/MyPortfolioJobs";
 
 const MyPortfolio = (props) => {
     return (
@@ -9,12 +10,8 @@ const MyPortfolio = (props) => {
                 <div>
                     <h1>MyPortfolio</h1>
                     <div>
-                        <h4>IDE JÖHETNEK A LINKEK</h4>
-                        <hr />
-                        <ProjectsCard />
-                        <h3>project 2</h3>
+                        <MyPortfolioJobs DarkMode={props.DarkMode} />
                     </div>
-                    <hr />
                     <h3>If everthing you've seen is boring, play some Tenzies!</h3>
                 </div>
                 <Tenzi />
