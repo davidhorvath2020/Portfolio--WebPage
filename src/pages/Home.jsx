@@ -2,7 +2,6 @@ import React from "react";
 import '../App.css';
 import { Link } from "react-router-dom";
 
-
 const Home = (props) => {
     return (
         <div className="Home">
@@ -18,7 +17,11 @@ const Home = (props) => {
                             I started to develop in high school, but I went to university to study agricultural engineering.
                             I started programming again at the end of university as a hobby developer.
                             And now here I am...
-                            <Link to='/About'><span className="Home--LinkToAbout">Mutasd hol tartok </span></Link>
+                            <Link to='/About'>
+                                <span className={`Link ${props.DarkMode && 'Link--Dark'} Home--LinkToAbout`}>
+                                    Mutasd hol tartok
+                                </span>
+                            </Link>
                         </div>
                     </div>
                     <div className="Image--Container">

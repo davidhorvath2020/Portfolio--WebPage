@@ -13,11 +13,14 @@ const MyPortfolioJobs = (props) => {
 
     const ProjectElements = jobs.map(x => (
         <div key={x.id} className={`Project--title ${props.DarkMode && 'Project--title--Dark'}`}>
-            
             <div className="Project--info">
                 <h3>{x.name}</h3>
                 <p>{x.details}</p>
-                <Link to={`/MyPortfolio/${x.id}`}>Show me the project</Link>
+                <Link to={`/MyPortfolio/${x.id}`}>
+                    <span className={`Link ${props.DarkMode && 'Link--Dark'} LinkToProjects `}>
+                        Show me the project
+                    </span>
+                </Link>
             </div>
         </div>
     ))

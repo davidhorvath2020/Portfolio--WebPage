@@ -21,10 +21,20 @@ const MyPortfolioJobsDetails = (props) => {
                 </Link>
                 {job ? (
                     <div className="Project--Detail">
-                        <h2>{job.name}</h2>
                         <p className="Project--details">{job.details}</p>
-                        <a href="https://tiny-sherbet-6609a3.netlify.app/">Mutasd a projektet</a>
-                        <p>{job.description}</p>
+                        <h2>{job.name}</h2>
+                        <a
+                            className={`Link ${props.DarkMode && 'Link--Dark'} GitHubLink`}
+                            href={job.GitHubLink}>
+                            Github Repo
+                        </a>
+                        <br />
+                        <a
+                            className={`Link ${props.DarkMode && 'Link--Dark'} ExtendLink`}
+                            href={job.externalLink}>
+                            Mutasd a projektet
+                        </a>
+                        <p> Description: {job.description}</p>
                     </div>
                 ) : <h2>Loading...</h2>}
             </div>

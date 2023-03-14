@@ -14,7 +14,7 @@ const MyPortfolio = (props) => {
                     </div>
                     <h3>If everthing you've seen is boring, play some Tenzies!</h3>
                 </div>
-                <Tenzi />
+                <Tenzi DarkMode={props.DarkMode} />
                 alatta dolgok
             </div>
         </div>

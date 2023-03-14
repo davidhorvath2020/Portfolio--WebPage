@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <nav className={`${props.DarkMode && "Navbar--Dark"}`}>
             <div className="Navbar--LogoDiv">
-                <img src="../src/assets/images/Logo.png" className="Logo"/>
+                <img src="../src/assets/images/Logo.png" className="Logo" />
             </div>
             <div className="Navbar--LinkCointainer">
                 <div className="Navbar--Links">
@@ -28,7 +28,7 @@ const Header = (props) => {
                     }
                 </div>
             </div>
-        </nav>
+        </nav >
     )
 }
 

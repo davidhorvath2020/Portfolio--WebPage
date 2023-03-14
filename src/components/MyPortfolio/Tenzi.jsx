@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { nanoid } from 'nanoid'; //random id 
 import TenziCard from "./TenziCard";
 
-const Tenzi = () => {
+const Tenzi = (props) => {
 
     const [dice, setDice] = useState(allNewDice);
     const [tenzies, setTenzies] = useState(false);
@@ -65,13 +65,11 @@ const Tenzi = () => {
         <TenziCard key={x.id} value={x.value} isHeld={x.isHeld}
             HoldTheDice={() => HoldTheDice(x.id)}
         />))
-
     return (
         <div>
             <div className="Tenzi--Container">
                 {tenzies ?
-
-                    <div className="Tenzi--Main">
+                    <div className={`Tenzi--Main ${props.DarkMode && 'Tenzi--Main--Dark'}`}>
                         <h1>You won!</h1>
                         <button
                             className="RollDice-Button"
@@ -80,11 +78,11 @@ const Tenzi = () => {
                         </button>
                     </div>
                     :
-
-                    <div className="Tenzi--Main">
+                    <div className={`Tenzi--Main ${props.DarkMode && 'Tenzi--Main--Dark'}`}>
                         <h1>Tenzies</h1>
                         <div>
-                            <div className="Tenzi--DiceCardContainer">
+                            <div className=
+                                {`Tenzi--DiceCardContainer ${props.DarkMode && 'Tenzi--DiceCardContainer--Dark'}`}>
                                 {DiceElements}
                             </div>
                         </div>
