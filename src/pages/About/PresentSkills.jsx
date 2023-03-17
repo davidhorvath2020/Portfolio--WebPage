@@ -1,11 +1,11 @@
 import React from "react";
-import MySkillsCard from '../components/About/MySkillsCard';
+import MySkillsCard from './MySkillsCard';
 
 import { FaFigma, FaReact } from "react-icons/fa";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiQgis } from "react-icons/si";
 
-const About = (props) => {
+const PresentSkills = (props) => {
 
     const Icons = {
         figmaIcon: <FaFigma />,
@@ -16,8 +16,8 @@ const About = (props) => {
 
 
     return (
-        <div className="About">
-            <div className={`About--Container ${props.DarkMode && 'About--Container--Dark'}`}>
+        <div className="PresentSkills">
+            <div className={`PresentSkills--Container ${props.DarkMode && 'PresentSkills--Container--Dark'}`}>
                 <div>
                     I started to learn programming in high school in Pascal in 2018. 
                     However, I went to study Agricultural Engineering
@@ -73,4 +73,4 @@ const About = (props) => {
     )
 }
 
-export default About;
+export default PresentSkills;

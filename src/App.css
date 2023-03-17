@@ -43,18 +43,17 @@ h1 {
   margin: 0;
 }
 
-.Link{
+.Link {
   color: black;
   text-decoration: none;
   display: inline-block;
 }
 
-.Link--Dark{
+.Link--Dark {
   color: white;
 }
 
 /************************HEADER*************************/
-
 nav {
   display: flex;
   flex-direction: row;
@@ -210,7 +209,7 @@ nav {
   text-align: left;
 }
 
-.Home--Image{
+.Home--Image {
   border-radius: 5px;
 }
 
@@ -256,6 +255,7 @@ nav {
 }
 
 /************************ABOUT*************************/
+
 .About {
   margin: 0;
   display: flex;
@@ -275,6 +275,32 @@ nav {
 .About--Container--Dark {
   border: 3px solid #64ffda;
   border-radius: 10px;
+  background-color: #051b3b;
+}
+
+.About--Navbar{
+  background: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+/************************PresentSkills*************************/
+.PresentSkills {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.PresentSkills--Container {
+  display: flex;
+  width: 85%;
+  flex-direction: column;
+  margin: 50px 70px 50px 70px;
+  background-color: rgb(100, 255, 218);
+}
+
+.PresentSkills--Container--Dark {
+
   background-color: #051b3b;
 }
 
@@ -355,11 +381,11 @@ nav {
   background-color: #051b3b;
 }
 
-.LinkToProjects{
+.LinkToProjects {
   transition: 0.2s;
 }
 
-.LinkToProjects:hover{
+.LinkToProjects:hover {
   letter-spacing: 2px;
 }
 
@@ -418,7 +444,7 @@ nav {
   background-color: #051b3b;
 }
 
-.Project--Detail{
+.Project--Detail {
   display: flex;
   flex-direction: column;
   max-width: fit-content;
@@ -436,12 +462,12 @@ nav {
 }
 
 .ExtendLink,
-.GitHubLink{
+.GitHubLink {
   transition: 0.2s;
 }
 
 .ExtendLink:hover,
-.GitHubLink:hover{
+.GitHubLink:hover {
   letter-spacing: 2px;
 }
 
@@ -463,13 +489,13 @@ nav {
   transition: 0.2s;
 }
 
-.Tenzi--Main:hover{
+.Tenzi--Main:hover {
   background-color: rgb(11, 255, 197);
   height: 110%;
   transform: scale(1.05);
 }
 
-.Tenzi--Main--Dark:hover{
+.Tenzi--Main--Dark:hover {
   background-color: #04142c;
   height: 110%;
   transform: scale(1.05);
@@ -489,7 +515,8 @@ nav {
   margin: 20px;
   min-height: fit-content;
 }
-.Tenzi--DiceCardContainer--Dark{
+
+.Tenzi--DiceCardContainer--Dark {
   border: 2px solid #64ffda;
 }
 

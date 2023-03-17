@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 
 const Header = (props) => {
+
+    const activeStyle = {
+        fontSize: '1.2rem'
+    }
+
     return (
         <nav className={`${props.DarkMode && "Navbar--Dark"}`}>
             <div className="Navbar--LogoDiv">
@@ -10,15 +15,24 @@ const Header = (props) => {
             </div>
             <div className="Navbar--LinkCointainer">
                 <div className="Navbar--Links">
-                    <Link
+                    <NavLink
                         className={`Navbar--Element ${props.DarkMode && 'Navbar--Element--Dark'}`}
-                        to='/'>Home</Link>
-                    <Link
+                        to='/'
+                        style={({ isActive }) => isActive ? activeStyle : null}>
+                        Home
+                    </NavLink>
+                    <NavLink
                         className={`Navbar--Element ${props.DarkMode && 'Navbar--Element--Dark'}`}
-                        to='/About'>About</Link>
-                    <Link
+                        to='/About'
+                        style={({ isActive }) => isActive ? activeStyle : null}>
+                        About
+                    </NavLink>
+                    <NavLink
                         className={`Navbar--Element ${props.DarkMode && 'Navbar--Element--Dark'}`}
-                        to='/MyPortfolio'>MyPortfolio</Link>
+                        to='/MyPortfolio'
+                        style={({ isActive }) => isActive ? activeStyle : null}>
+                        MyPortfolio
+                    </NavLink>
                 </div>
                 <div className={`ThemeButton ${props.DarkMode && "ThemeButton--Dark"} `}
                     onClick={props.toggleDarkMode} >

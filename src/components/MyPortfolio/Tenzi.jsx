@@ -53,6 +53,8 @@ const Tenzi = (props) => {
         }
     }
 
+    const [record, setRecord] = useState(10000)
+
     function HoldTheDice(id) {              //Ez a kijelölést csinálja
         setDice(oldDice => oldDice.map(x => {
             return x.id === id ?
@@ -95,6 +97,7 @@ const Tenzi = (props) => {
                             you rolled:
                             {numberOfRolls}
                         </div>
+                        Best game:
                     </div>}
             </div>
         </div>

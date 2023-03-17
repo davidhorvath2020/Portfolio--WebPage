@@ -1,8 +1,16 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './pages/About';
+
+import AboutLayout from './pages/About/AboutLayout';
+import About from './pages/About/PresentSkills';
+
+import Past from './pages/About/Past'
+import Present from './pages/About/Present';
+import Future from './pages/About/Future';
+
 import MyPortfolio from './pages/MyPortfolio';
 import MyPortfolioJobsDetails from './components/MyPortfolio/MyPortfolioJobsDetails';
 
@@ -37,7 +45,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout style={DarkStyle} toggleDarkMode={toggleDarkMode} DarkMode={DarkMode} />} >
           <Route path='/' element={<Home DarkMode={DarkMode} />} />
-          <Route path='/About' element={<About DarkMode={DarkMode} />} />
+
+          <Route path='/About' element={<AboutLayout DarkMode={DarkMode} />}>
+            <Route index element={<Past />} />
+            <Route path='Present' element={<Present DarkMode={DarkMode} />} />
+            <Route path='Future' element={<Future />} />
+          </Route>
 
           <Route path='/MyPortfolio' element={<MyPortfolio DarkMode={DarkMode} />} />
           <Route path="MyPortfolio/:id" element={<MyPortfolioJobsDetails DarkMode={DarkMode} />} />
